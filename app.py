@@ -3,8 +3,10 @@ import psutil
 import platform
 import os
 import datetime
+from flask_socketio import SocketIO
 
-app = Flask(__name__)
+#THIS IS A PLAYGROUND FILE, also connected to the tempplates but only shows it unfinished 
+app = Flask(__name__, template_folder = 'templates')
 
 @app.route("/")
 def index():
@@ -24,4 +26,4 @@ def get_temp():
         return "Unavailable"
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(host="0.0.0.0", port=5001, debug=True)
